@@ -1,0 +1,27 @@
+info:
+  name: New Request
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://postman-echo.com/post
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        // const moment = pm.require('npm:moment@2.30.1');
+        console.log(moment);
+        const now = moment();
+        console.log(now.format('YYYY-MM-DD'));                // 2026-03-20
+        console.log(now.format('DD/MM/YYYY'));                // 20/03/2026
+        console.log(now.format('MMMM Do YYYY, h:mm:ss a'));  // March 20th 2026, 10:30:00 am
+        console.log(now.toISOString());
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

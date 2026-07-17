@@ -1,0 +1,15 @@
+opencollection: 1.0.0
+
+info:
+  name: test_get_url - 1
+
+request:
+  variables:
+    - name: key
+      value: ""
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git
